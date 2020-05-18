@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.zvent.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_slideshowFragment"
+            app:destination="@id/personas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.zvent.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/personas3"
+        android:name="com.example.zvent.Invitados"
+        android:label="Registrando (3/5)"
+        tools:layout="@layout/invitados_fragment" >
+        <action
+            android:id="@+id/action_personas3_to_personas4"
+            app:destination="@id/personas4" />
+    </fragment>
+    <fragment
+        android:id="@+id/personas"
+        android:name="com.example.zvent.ui.slideshow.SlideshowFragment"
+        android:label="Registrando (1/5)"
+        tools:layout="@layout/fragment_slideshow">
+        <action
+            android:id="@+id/action_personas_to_personas22"
+            app:destination="@id/personas2" />
+    </fragment>
+    <fragment
+        android:id="@+id/personas2"
+        android:name="com.example.zvent.Personas2"
+        android:label="Registrados (2/5)"
+        tools:layout="@layout/fragment_personas2">
+        <action
+            android:id="@+id/action_personas2_to_personas3"
+            app:destination="@id/personas3" />
+    </fragment>
+    <fragment
+        android:id="@+id/personas4"
+        android:name="com.example.zvent.ui.Personas4"
+        android:label="Registrando (4/5)"
+        tools:layout="@layout/fragment_personas4">
+        <action
+            android:id="@+id/action_personas4_to_personas5"
+            app:destination="@id/personas5" />
+    </fragment>
+    <fragment
+        android:id="@+id/personas5"
+        android:name="com.example.zvent.ui.Personas5"
+        android:label="Regitrando (5/5)"
+        tools:layout="@layout/fragment_personas5" >
+        <action
+            android:id="@+id/action_personas5_to_resultados"
+            app:destination="@id/resultados" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultados"
+        android:name="com.example.zvent.Resultados"
+        android:label="Resultados"
+        tools:layout="@layout/fragment_resultados">
+        <action
+            android:id="@+id/resultados"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_invitados"
+        android:name="com.example.zvent.BlankFragment"
+        android:label="Invitados"
+        tools:layout="@layout/blank_fragment" />
+    <fragment
+        android:id="@+id/nav_roles"
+        android:name="com.example.zvent.BlankFragment2"
+        android:label="Roles"
+        tools:layout="@layout/fragment_blank2" />
+
+</navigation>
